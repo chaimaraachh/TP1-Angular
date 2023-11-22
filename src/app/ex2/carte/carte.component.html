@@ -1,0 +1,133 @@
+<div class="container">
+
+
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <div class="card">
+        <div class="front">
+          <div class="cover">
+            <img src="assets/images/rotating_card_thumb3.png"/>
+          </div>
+          <div class="user">
+            <img class="img-circle" [src]="image | defaultImage"/>
+          </div>
+          <div class="content">
+            <div class="main">
+              <h3 class="name">{{ name }}</h3>
+              <p class="profession">{{ profession }}</p>
+              <p class="text-center">"{{ motto }}"</p>
+            </div>
+            <div class="footer">
+              <div class="rating">
+                <i class="fa fa-mail-forward"></i> Auto Rotation
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div class="header">
+            <h5 class="motto">"{{ motto }}"</h5>
+          </div>
+          <div class="content">
+            <div class="main">
+              <h4 class="text-center">Job Description</h4>
+              <p class="text-center">{{ jobDescription }}</p>
+  
+              <div class="stats-container">
+                <div class="stats">
+                  <h4>{{ followers }}</h4>
+                  <p>Followers</p>
+                </div>
+                <div class="stats">
+                  <h4>{{ following }}</h4>
+                  <p>Following</p>
+                </div>
+                <div class="stats">
+                  <h4>{{ projects }}</h4>
+                  <p>Projects</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="social-links text-center">
+              <a [href]="facebook" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+              <a [href]="googlePlus" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+              <a [href]="twitter" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+    <div class="form-card">
+      <div class="form-title">
+        <h2>Edit Profile</h2>
+      </div>
+
+
+      <div class="form-container">
+
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input [(ngModel)]="name" name="name" id="name" type="text" class="form-control" [value]="name">
+  </div>
+
+  <div class="form-group">
+    <label for="profession">Profession</label>
+    <input [(ngModel)]="profession" name="profession" id="profession" type="text" class="form-control" [value]="profession">
+  </div>
+
+  <div class="form-group">
+    <label for="motto">Motto</label>
+    <input [(ngModel)]="motto" name="motto" id="motto" type="text" class="form-control" [value]="motto">
+  </div>
+
+  <div class="form-group">
+    <label for="jobDescription">Job Description</label>
+    <textarea [(ngModel)]="jobDescription" name="jobDescription" id="jobDescription" class="form-control" [value]="jobDescription"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="followers">Followers</label>
+    <input [(ngModel)]="followers" name="followers" id="followers" type="number" class="form-control" [value]="followers">
+  </div>
+
+  <div class="form-group">
+    <label for="following">Following</label>
+    <input [(ngModel)]="following" name="following" id="following" type="number" class="form-control" [value]="following">
+  </div>
+
+  <div class="form-group">
+    <label for="projects">Projects</label>
+    <input [(ngModel)]="projects" name="projects" id="projects" type="number" class="form-control" [value]="projects">
+  </div>
+  <div class="form-group">
+    <label for="image">Image</label>
+    <input [(ngModel)]="image" name="image" id="image" type="text" class="form-control" [value]="image">
+  </div>
+  <div class="form-group">
+      <label for="facebook">Facebook</label>
+      <input [(ngModel)]="facebook" name="facebook" id="facebook" type="text" class="form-control" [value]="facebook">
+    </div>
+    
+    <div class="form-group">
+      <label for="googlePlus">Google+</label>
+      <input [(ngModel)]="googlePlus" name="googlePlus" id="googlePlus" type="text" class="form-control" [value]="googlePlus">
+    </div>
+    
+    <div class="form-group">
+      <label for="twitter">Twitter</label>
+      <input [(ngModel)]="twitter" name="twitter" id="twitter" type="text" class="form-control" [value]="twitter">
+    </div>
+
+</form>
+</div>
+</div>
+  </div>
+  

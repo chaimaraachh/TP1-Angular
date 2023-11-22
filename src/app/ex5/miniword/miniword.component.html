@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="text-center">
+    <p class="display-4 font-weight-bold" [ngStyle]="{ 'color': fontColor, 'font-size.px': fontSize, 'font-family': selectedFont }">
+        Testing miniword.
+    </p>
+  </div>
+
+  <div class="form-row align-items-center">
+    <div class="col-md-4 form-group">
+    <label class="font-weight-bold" >Couleur:</label>
+    <!-- <input type="text"  [(ngModel)]="fontColor"> -->
+    <input class="form-control"  (change)="fontColor = monInput.value" type="color" #monInput /> 
+  </div>
+
+  <div class="col-md-4 form-group">
+    <label class="font-weight-bold">Taille de police:</label>
+    <input class="form-control" type="number"  [(ngModel)]="fontSize">
+  </div>
+
+  <div class="col-md-4 form-group">
+  
+    <label class="font-weight-bold" >Police:</label>
+    <select class="form-control" [(ngModel)]="selectedFont">
+      <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
+    </select>
+  </div>
+</div>
+</div>

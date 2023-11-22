@@ -1,0 +1,37 @@
+<div *ngIf="showedCv" class="card-container">
+    <div class="card">
+      <div class="front">
+        <div class="cover">
+          <img src="assets/images/rotating_card_thumb3.png"/>
+        </div>
+        <div class="user">
+          <img class="img-circle" [src]="showedCv.path"/>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h3 class="name">{{ showedCv.name }} {{ showedCv.firstname }}</h3>
+            <p class="profession">{{ showedCv.job }}</p>
+            <p class="text-center">"{{ showedCv.age }}"</p>
+          </div>
+          <div class="footer">
+            <div class="rating">
+              <i class="fa fa-mail-forward"></i> Auto Rotation
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="header">
+          <h5 class="motto">"{{ motto }}"</h5>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h4 class="text-center">Job Description</h4>
+            <p class="text-center">{{ jobDescription }}</p>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

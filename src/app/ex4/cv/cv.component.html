@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <app-liste class="app-liste" [cvs]="cvs" (showCV)="showDetails($event)"></app-liste>
+    </div>
+    <div class="col">
+      <app-detail class="app-detail" [showedCv]="selectedCv"></app-detail>
+    </div>
+  </div>
+</div>

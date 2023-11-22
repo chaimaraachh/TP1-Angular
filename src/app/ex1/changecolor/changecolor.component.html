@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <div [style.backgroundColor]="currentColor" class="alert alert-secondary">
+      <div class="form-group">
+        <label for="colorInput" class="font-weight-bold">Change Color:</label>
+        <input type="text" class="form-control" id="colorInput" (input)="changeColor(monInput.value)" #monInput>
+      </div>
+  
+      <button class="btn btn-primary" (click)="resetColor()">Reset Color</button>
+    </div>
+  </div>
+  

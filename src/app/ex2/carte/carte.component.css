@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; 
+    padding: 20px;
+  }
+  
+    
+    .form-container, .card-container {
+      flex: 1; 
+      margin-top: 0;
+      padding-top: 0;
+      padding: 20px;
+  
+    }
+  
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+    
+    
+    .form-card {
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 5px;
+      width: 500px; 
+      margin-left: 20px;
+    }
+    
+    .form-card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    }
+    
+    .form-title {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 10px 16px;
+    }
+    
+    .form-container {
+      padding: 20px;
+      margin-left: 20px;
+    }
+    
+    

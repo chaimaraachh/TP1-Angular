@@ -1,0 +1,10 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .app-liste,
+  .app-detail {
+    flex: 1;
+  }
+  
