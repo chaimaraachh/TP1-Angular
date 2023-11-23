@@ -6,7 +6,7 @@ import {Cv} from "../cv";
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.css']
 })
-export class CvComponent implements OnInit {
+export class CvComponent  {
  
   public cvs: Cv[] = [
     new Cv(0, "Raach", "Chaima", 23, 11111111, "Student", "assets/images/rotating_card_profile.png"),
@@ -19,8 +19,7 @@ export class CvComponent implements OnInit {
   showDetails(id: number) {
     this.selectedCv = this.cvs.find((cv) => cv.id === id) || null;
   }
-  ngOnInit(): void {
-  }
+
 
 
 }

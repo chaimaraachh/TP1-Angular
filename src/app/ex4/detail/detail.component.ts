@@ -6,7 +6,7 @@ import {Cv} from "../cv";
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent  {
 
 
   @Input() showedCv: Cv | null = null;
@@ -15,7 +15,4 @@ export class DetailComponent implements OnInit {
   motto = 'To be or not to be, this is my awesome motto!';
   jobDescription = 'Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...';
 
-  
-  ngOnInit(): void {
-  }
 }

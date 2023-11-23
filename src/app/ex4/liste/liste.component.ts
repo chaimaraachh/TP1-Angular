@@ -6,13 +6,12 @@ import {Cv} from "../cv";
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.css']
 })
-export class ListeComponent implements OnInit {
+export class ListeComponent  {
   @Output() showCV = new EventEmitter<number>()
   @Input() cvs : Cv[] = [];
 
 
-  ngOnInit(): void {
-  }
+
 
 
   cvSelected(id: number){

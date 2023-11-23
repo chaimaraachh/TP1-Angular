@@ -6,13 +6,11 @@ import {Cv} from "../cv";
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent  {
   @Output() itemClick = new EventEmitter<number>()
   @Input() cv! : Cv;
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
   onClick(id: number){
     this.itemClick.emit(id)
