@@ -8,9 +8,6 @@ import { Component } from '@angular/core';
 export class ChangecolorComponent {
   currentColor: string = '';
 
-  changeColor(newColor: string) {
-    this.currentColor = newColor;
-  }
 
   resetColor() {
     this.currentColor = '';

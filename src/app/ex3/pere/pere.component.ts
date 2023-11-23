@@ -12,8 +12,6 @@ export class PereComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
   changeColor(color : string){
     this.color = color

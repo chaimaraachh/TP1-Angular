@@ -10,6 +10,8 @@
             <img src="assets/images/rotating_card_thumb3.png"/>
           </div>
           <div class="user">
+          <!--img class="img-circle" src="assets/images/{{ image }} | defaultImage"/ -->
+
             <img class="img-circle" [src]="image | defaultImage"/>
           </div>
           <div class="content">
@@ -50,13 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="footer">
-            <div class="social-links text-center">
-              <a [href]="facebook" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-              <a [href]="googlePlus" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-              <a [href]="twitter" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -111,20 +107,7 @@
     <label for="image">Image</label>
     <input [(ngModel)]="image" name="image" id="image" type="text" class="form-control" [value]="image">
   </div>
-  <div class="form-group">
-      <label for="facebook">Facebook</label>
-      <input [(ngModel)]="facebook" name="facebook" id="facebook" type="text" class="form-control" [value]="facebook">
-    </div>
-    
-    <div class="form-group">
-      <label for="googlePlus">Google+</label>
-      <input [(ngModel)]="googlePlus" name="googlePlus" id="googlePlus" type="text" class="form-control" [value]="googlePlus">
-    </div>
-    
-    <div class="form-group">
-      <label for="twitter">Twitter</label>
-      <input [(ngModel)]="twitter" name="twitter" id="twitter" type="text" class="form-control" [value]="twitter">
-    </div>
+
 
 </form>
 </div>

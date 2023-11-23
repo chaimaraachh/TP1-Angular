@@ -9,13 +9,12 @@ export class FilsComponent {
   @Input() pereColor! : string;
   @Output() btnClick = new EventEmitter()
   myFavoriteColor: string = "Orchid";
-
+  msg= "La couleur de mon père : "
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
   onClick(){
+    this.msg="Ma couleur preférée est : "
     this.btnClick.emit(this.myFavoriteColor);
   }
 

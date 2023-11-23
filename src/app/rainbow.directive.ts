@@ -4,7 +4,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
   selector: '[appRainbow]'
 })
 export class RainbowDirective {
-  colors: string[] = ['red', 'blue', 'yellow', 'green', 'orange', 'violet'];
+  colors: string[] = ['orchid', 'blue', 'red', 'green', 'orange', 'violet','yellow'];
 
 
   constructor() { }
@@ -15,9 +15,6 @@ export class RainbowDirective {
   borderColor: string='';
 
   @HostListener('keyup')
-  mouseenter() {
-    this.changeColor();
-  }
   changeColor(){
     const randomIndex = Math.floor(Math.random() * this.colors.length);
     this.color = this.colors[randomIndex];
