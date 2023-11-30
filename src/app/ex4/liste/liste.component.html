@@ -1,1 +1,13 @@
-<app-item *ngFor="let cv of cvs" (itemClick)="cvSelected($event)" [cv]="cv" ></app-item>
+
+<ol class="list-group">
+    <li
+      [ngClass]="{
+        'list-group-item-primary': isOdd,
+        'list-group-item-success': !isOdd
+      }"
+      *ngFor="let cv of cvs; let isOdd = odd"
+      class="list-group-item"
+    >
+      <app-item (itemClick)="cvSelected($event)" [cv]="cv" ></app-item>
+    </li>
+  </ol>
