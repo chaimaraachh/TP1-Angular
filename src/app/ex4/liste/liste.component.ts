@@ -7,14 +7,14 @@ import {Cv} from "../cv";
   styleUrls: ['./liste.component.css']
 })
 export class ListeComponent  {
-  @Output() showCV = new EventEmitter<number>()
+  @Output() showCV = new EventEmitter<Cv>()
   @Input() cvs : Cv[] = [];
 
 
 
 
 
-  cvSelected(id: number){
-    this.showCV.emit(id);
+  cvSelected(cv:Cv){
+    this.showCV.emit(cv);
   }
 }

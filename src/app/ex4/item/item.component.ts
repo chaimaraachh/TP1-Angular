@@ -7,13 +7,13 @@ import {Cv} from "../cv";
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent  {
-  @Output() itemClick = new EventEmitter<number>()
+  @Output() itemClick = new EventEmitter<Cv>()
   @Input() cv! : Cv;
   constructor() { }
 
 
-  onClick(id: number){
-    this.itemClick.emit(id)
+  onClick(cv: Cv){
+    this.itemClick.emit(cv)
   }
 
 }

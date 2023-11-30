@@ -7,10 +7,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class FilsComponent {
   @Input() pereColor! : string;
-  @Output() btnClick = new EventEmitter()
+  @Output() btnClick = new EventEmitter<string>()
   myFavoriteColor: string = "Orchid";
   msg= "La couleur de mon père : "
-  constructor() { }
+  constructor() {
+    this.pereColor = this.myFavoriteColor;
+   }
 
 
   onClick(){

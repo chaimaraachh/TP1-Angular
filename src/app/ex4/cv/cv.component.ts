@@ -16,10 +16,9 @@ export class CvComponent  {
 
   selectedCv: Cv | null = null;
 
-  showDetails(id: number) {
-    this.selectedCv = this.cvs.find((cv) => cv.id === id) || null;
-  }
-
+  showDetails(selectedCv: Cv) {
+    this.selectedCv = this.cvs.find((cv) => cv === selectedCv) || null;
+}
 
 
 }
