@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Cv} from "../cv";
+import { CvService} from 'src/app/services/cv-service';
+import {ToastrService} from "ngx-toastr";
+
 
 @Component({
   selector: 'app-cv',
@@ -7,14 +10,15 @@ import {Cv} from "../cv";
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent  {
- 
-  public cvs: Cv[] = [
-    new Cv(0, "Raach", "Chaima", 23, 11111111, "Student", "assets/images/rotating_card_profile.png"),
-    new Cv(1, "Ghaouari", "Koussay", 21, 22222222, "Student", "assets/images/rotating_card_profile2.png"),
-    new Cv(2, "mansour", "wajdi", 22, 33333333, "Student", "assets/images/rotating_card_profile3.png"),
-  ];
 
   selectedCv: Cv | null = null;
+
+ 
+  cvs :Cv[];
+
+  constructor(private cvService : CvService) {
+    this.cvs = cvService.getCvs()
+  }
 
   showDetails(selectedCv: Cv) {
     this.selectedCv = this.cvs.find((cv) => cv === selectedCv) || null;

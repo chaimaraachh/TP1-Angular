@@ -15,7 +15,13 @@ import { PereComponent } from './ex3/pere/pere.component';
 import { FilsComponent } from './ex3/fils/fils.component';
 import { CarteComponent } from './ex2/carte/carte.component';
 import { RainbowComponent } from './ex6/rainbow/rainbow.component';
-import { NavbarComponent } from './nav/navbar/navbar.component'; 
+import { NavbarComponent } from './nav/navbar/navbar.component';
+import { EmbaucheComponent } from './ex4/embauche/embauche.component'; 
+import {ToastrModule} from "ngx-toastr";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {trigger,state,style,animate,transition}from '@angular/animations';
+
+
 @NgModule({
   declarations: [
     DefaultImagePipe ,
@@ -32,11 +38,14 @@ import { NavbarComponent } from './nav/navbar/navbar.component';
     CarteComponent,
     RainbowComponent,
     NavbarComponent,
+    EmbaucheComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({positionClass: "toast-bottom-right"  })
   ],
   providers: [],
   bootstrap: [AppComponent]

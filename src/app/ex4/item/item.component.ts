@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {Cv} from "../cv";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-item',
