@@ -32,11 +32,16 @@
            
           </div>
         </div>
-        <div class="footer">
-          <button class="btn btn-primary " (click)="embaucher()">
-            Embauche
+        <div class="footer mt-4">
+          <button class="btn btn-primary mr-2" (click)="embaucher()">
+              Embauche
+          </button>
+      
+          <button class="btn btn-primary" [routerLink]="['/ex4', showedCv.id]">
+              Détails
           </button>
       </div>
+      
       </div>
 
   </div>

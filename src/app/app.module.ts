@@ -20,6 +20,7 @@ import { EmbaucheComponent } from './ex4/embauche/embauche.component';
 import {ToastrModule} from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {trigger,state,style,animate,transition}from '@angular/animations';
+import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
 
 
 @NgModule({
@@ -39,13 +40,14 @@ import {trigger,state,style,animate,transition}from '@angular/animations';
     RainbowComponent,
     NavbarComponent,
     EmbaucheComponent,
+    CdDetailComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({positionClass: "toast-bottom-right"  })
+    ToastrModule.forRoot({positionClass: "toast-top-center"  })
   ],
   providers: [],
   bootstrap: [AppComponent]

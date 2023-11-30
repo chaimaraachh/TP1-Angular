@@ -23,11 +23,8 @@ export class DetailComponent  {
 
   embaucher() {
     if (this.showedCv) {
-      if (this.embaucheService.embaucher(this.showedCv)) {
-        this.toaster.success(`${this.showedCv.firstname} ${this.showedCv.name} a été embauché avec succès`)
-      } else {
-        this.toaster.warning(`${this.showedCv.firstname} ${this.showedCv.name} est déjà embauché`)
-      }
+      this.embaucheService.embaucher(this.showedCv)
+
     }
   }
 }
