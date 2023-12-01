@@ -1,3 +1,4 @@
+// changecolor.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,25 +8,25 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./changecolor.component.css']
 })
 export class ChangecolorComponent implements OnInit {
-  currentColor: string = '';
-  defaultColor: string = 'grey'; 
+  currentColor!: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    const colorParam = this.route.snapshot.params['color'];
-
-    if (colorParam) {
-      this.currentColor = colorParam;
-    } else {
-      this.currentColor = this.defaultColor;
-    }
+    this.route.params.subscribe(params => {
+      this.currentColor = params['color'] || 'grey';
+    });
   }
 
-  resetColor() {
-    this.currentColor = this.defaultColor;
+  onColorChange(): void {
+    this.router.navigate(['/ex1', this.currentColor]);
+  }
+
+  resetColor(): void {
+    this.currentColor = 'grey';
+    this.router.navigate(['/ex1/grey']);
   }
 }

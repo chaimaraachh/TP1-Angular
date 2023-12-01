@@ -11,6 +11,7 @@ import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
 
 const routes: Routes = [
   { path: "ex1/:color", component:  ChangecolorComponent},
+  { path: 'ex1', redirectTo: 'ex1/grey' },
   { path: "ex1", component:  ChangecolorComponent},
   { path: "ex2", component:  CarteComponent},
   { path: "ex3", component: PereComponent },
