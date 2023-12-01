@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cv } from '../cv';
 import { CvService } from 'src/app/services/cv-service';
 import { APP_ROUTES } from 'src/app/config/routes.config';
+import { EmbaucheService } from 'src/app/services/embauche-service.service';
 
 
 @Component({
@@ -17,16 +18,20 @@ export class CdDetailComponent {
     private cvService: CvService,
     private acr: ActivatedRoute,
     private router: Router,
+    private embaucheService: EmbaucheService
   ) {
     const id = this.acr.snapshot.params['id'];
     this.cv = this.cvService.getCvById(id);
     if (!this.cv)
       this.router.navigate([APP_ROUTES.cv]);
   }
+
+
   deleteCv() {
     if (this.cv)
     {
       this.cvService.deleteCv(this.cv);
+      this.embaucheService.deleteCv(this.cv);
       this.router.navigate([APP_ROUTES.cv]);
     }
   }
