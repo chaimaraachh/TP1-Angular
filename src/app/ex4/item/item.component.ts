@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {Cv} from "../cv";
 import {ToastrService} from "ngx-toastr";
+import { CvService } from 'src/app/services/cv-service';
 
 @Component({
   selector: 'app-item',
@@ -8,13 +9,15 @@ import {ToastrService} from "ngx-toastr";
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent  {
-  @Output() itemClick = new EventEmitter<Cv>()
+  //@Output() itemClick = new EventEmitter<Cv>()
   @Input() cv! : Cv;
-  constructor() { }
+  constructor(private cvService: CvService) { }
 
 
   onClick(cv: Cv){
-    this.itemClick.emit(cv)
+    //this.itemClick.emit(cv)
+    this.cvService.showCv(this.cv);
+
   }
 
 }
