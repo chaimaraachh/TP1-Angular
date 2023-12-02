@@ -21,6 +21,8 @@ import {ToastrModule} from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {trigger,state,style,animate,transition}from '@angular/animations';
 import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
+import { LoginComponent } from './login/login.component';
+import { ImagesComponent } from './images/images.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
     NavbarComponent,
     EmbaucheComponent,
     CdDetailComponent,
+    LoginComponent,
+    ImagesComponent,
   ],
   imports: [
     FormsModule,

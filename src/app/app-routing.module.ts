@@ -8,6 +8,8 @@ import { MiniwordComponent } from './ex5/miniword/miniword.component';
 import { RainbowComponent } from './ex6/rainbow/rainbow.component';
 import { DetailComponent } from './ex4/detail/detail.component';
 import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
+import { LoginComponent } from './login/login.component';
+import { ImagesComponent } from './images/images.component';
 
 const routes: Routes = [
   { path: "ex1/:color", component:  ChangecolorComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: "ex4/:id", component: CdDetailComponent},
   { path: "ex5", component: MiniwordComponent },
   { path: "ex6", component: RainbowComponent },
+  { path: "login", component: LoginComponent },
+  { path: "images", component: ImagesComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
