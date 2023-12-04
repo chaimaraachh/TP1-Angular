@@ -37,7 +37,6 @@ export class DetailComponent  {
     this.cvService.cvObservable$.subscribe(
       (cv) => {
         this.showedCv = cv;
-        console.log("tss")
       }
     )
   }

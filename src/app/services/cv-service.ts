@@ -9,7 +9,7 @@ export class CvService {
 
 
   private cvSubject : Subject<Cv> = new Subject<Cv>();
-  public cvObservable$ = this.cvSubject.asObservable()
+  public cvObservable$ = this.cvSubject.asObservable();
 
   public cvs: Cv[] = [
     new Cv(0, "Raach", "Chaima", 23, 11111111, "Student", "assets/images/rotating_card_profile.png"),
