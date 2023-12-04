@@ -23,6 +23,7 @@ import {trigger,state,style,animate,transition}from '@angular/animations';
 import { CdDetailComponent } from './ex4/cv-detail/cv-detail.component';
 import { LoginComponent } from './login/login.component';
 import { ImagesComponent } from './images/images.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -47,6 +48,9 @@ import { ImagesComponent } from './images/images.component';
     ImagesComponent,
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

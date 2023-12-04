@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Cv} from "../ex4/cv";
-import { Subject } from 'rxjs';
+import { Observable, Subject, catchError, of, tap, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
 
+  private apiUrl = 'https://apilb.tridevs.net/api/personnes';
 
+  
   private cvSubject : Subject<Cv> = new Subject<Cv>();
   public cvObservable$ = this.cvSubject.asObservable()
 
@@ -17,12 +21,23 @@ export class CvService {
     new Cv(2, "mansour", "wajdi", 22, 33333333, "Student", "assets/images/rotating_card_profile3.png"),
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
+  
+  getCvs(): Observable<Cv[]> {
+    return this.http.get<Cv[]>(this.apiUrl).pipe(
+      catchError(this.handleError.bind(this))
+    );
+  }
+  
+  private handleError(error: HttpErrorResponse): Observable<Cv[]> {
+    this.toastr.error('There was a problem fetching CVs from the API.');
+    return of(this.cvs);
+  }/*
   getCvs(): Cv[]{
     return this.cvs;
   }
-
+*/
   getCvById(id: number): Cv | null {
     return this.cvs.find((cv) => cv.id === +id) ?? null;
   }

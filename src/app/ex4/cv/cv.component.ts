@@ -12,17 +12,17 @@ import {ToastrService} from "ngx-toastr";
 export class CvComponent  {
 
   selectedCv: Cv | null = null;
+  cvs: Cv[] = [];
 
- 
-  cvs :Cv[];
-
-  constructor(private cvService : CvService) {
-    this.cvs = cvService.getCvs()
+  constructor(private cvService: CvService) {
+    this.cvService.getCvs().subscribe((cvs: Cv[]) => {
+      this.cvs = cvs;
+    });
   }
 
   showDetails(selectedCv: Cv) {
     this.selectedCv = this.cvs.find((cv) => cv === selectedCv) || null;
-}
+  }
 
 
 }
