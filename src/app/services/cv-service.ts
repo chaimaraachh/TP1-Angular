@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Cv} from "../ex4/cv";
-import { Observable, Subject, catchError, of, tap, throwError } from 'rxjs';
+import { Observable, Subject, catchError, map, of, tap, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ToastrService } from "ngx-toastr";
 
@@ -24,11 +24,15 @@ export class CvService {
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   
-  getCvs(): Observable<Cv[]> {
+  getCvsfromapi(): Observable<Cv[]> {
     return this.http.get<Cv[]>(this.apiUrl).pipe(
+      map(data => data.map(item => new Cv(item.id, item.name, item.firstname, item.age, item.CIN, item.job, item.path))),
+      tap((cvArray: Cv[]) => this.cvs = cvArray),
       catchError(this.handleError.bind(this))
     );
-  }
+  }  
+
+  
   
   private handleError(error: HttpErrorResponse): Observable<Cv[]> {
     this.toastr.error('There was a problem fetching CVs from the API.');
@@ -41,12 +45,20 @@ export class CvService {
   getCvById(id: number): Cv | null {
     return this.cvs.find((cv) => cv.id === +id) ?? null;
   }
-
+/*
   deleteCv(cv: Cv): boolean {
     const originalLength = this.cvs.length;
-    this.cvs = this.cvs.filter(item => item !== cv);
+    this.cvs = this.cvs.filter(item => item != cv);
+    console.log(this.cvs);
     return this.cvs.length < originalLength;
   }
+*/
+deleteCv(cv: Cv): boolean {
+  const originalLength = this.cvs.length;
+  this.cvs = this.cvs.filter(item => item.id !== cv.id);
+  console.log(this.cvs);
+  return this.cvs.length < originalLength;
+}
 
   showCv(cv : Cv){
     this.cvSubject.next(cv)

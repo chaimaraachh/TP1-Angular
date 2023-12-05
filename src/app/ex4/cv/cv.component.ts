@@ -14,10 +14,15 @@ export class CvComponent  {
   selectedCv: Cv | null = null;
   cvs: Cv[] = [];
 
-  constructor(private cvService: CvService) {
-    this.cvService.getCvs().subscribe((cvs: Cv[]) => {
-      this.cvs = cvs;
-    });
+  constructor(private cvService: CvService) { }
+
+  ngOnInit() {
+    this.cvService.getCvsfromapi().subscribe(
+      (cvs: Cv[]) => {
+        this.cvs = cvs;
+      },
+      error => console.error(error)
+    );
   }
 
   showDetails(selectedCv: Cv) {
