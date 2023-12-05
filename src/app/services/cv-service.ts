@@ -53,11 +53,21 @@ export class CvService {
     return this.cvs.length < originalLength;
   }
 */
+
+deleteCvapi(id: number): Observable<Cv> {
+  return this.http.delete<Cv>(`${this.apiUrl}/${id}`);
+}
+
 deleteCv(cv: Cv): boolean {
   const originalLength = this.cvs.length;
   this.cvs = this.cvs.filter(item => item.id !== cv.id);
-  console.log(this.cvs);
-  return this.cvs.length < originalLength;
+  const isDeleted = this.cvs.length < originalLength;
+  if (isDeleted) {
+    console.log(`CV with ID ${cv.id} deleted successfully.`);
+  } else {
+    console.warn(`No CV found with ID ${cv.id}.`);
+  }
+  return isDeleted;
 }
 
   showCv(cv : Cv){

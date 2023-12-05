@@ -1,7 +1,7 @@
 <div class="card" (click)="onClick(cv)">
   <div class="card-body">
     <div class="row align-items-center">
-      <img class="col-2 img-fluid" src="{{cv.path}}" alt="CV Image">
+      <img class="col-2 img-fluid" [src]="cv.path | defaultImage" alt="CV Image">
       <div class="col">{{ cv.name }} {{cv.firstname}}</div>
     </div>
   </div>

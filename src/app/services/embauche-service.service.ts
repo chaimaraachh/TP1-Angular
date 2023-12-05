@@ -28,7 +28,10 @@ export class EmbaucheService {
 
   deleteCv(cv: Cv): boolean {
     const originalLength = this.listeEmbacuhes.length;
-    this.listeEmbacuhes = this.listeEmbacuhes.filter(item => item !== cv);
+    this.listeEmbacuhes = this.listeEmbacuhes.filter(item => item.id !== cv.id);
     return this.listeEmbacuhes.length < originalLength;
   }
+
+
 }
+
