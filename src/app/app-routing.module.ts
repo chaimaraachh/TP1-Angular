@@ -18,7 +18,6 @@ const routes: Routes = [
   { path: "ex2", component:  CarteComponent},
   { path: "ex3", component: PereComponent },
   { path: "ex4", component: CvComponent },
-  { path: "cv", component: CvComponent },
   { path: "ex4/:id", component: CdDetailComponent},
   { path: "ex5", component: MiniwordComponent },
   { path: "ex6", component: RainbowComponent },

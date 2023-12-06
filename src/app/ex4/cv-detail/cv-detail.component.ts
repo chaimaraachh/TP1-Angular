@@ -38,18 +38,16 @@ export class CdDetailComponent {
       this.router.navigate([APP_ROUTES.cv]);
     }
   }*/
+
   deleteCv() {
     if (this.cv) {
       this.cvService.deleteCvapi(this.cv.id).subscribe({
         next: (response) => {
-          // API call succeeded
           console.log('CV deleted from API', response);
-          this.cvService.deleteCv(this.cv!);
           this.embaucheService.deleteCv(this.cv!);
           this.router.navigate([APP_ROUTES.cv]);
         },
         error: (error) => {
-          // API call failed, handle the error and delete locally
           console.error('Error deleting CV from API', error);
           this.toastr.error('API not available. Deleting CV locally.');
   
@@ -61,9 +59,7 @@ export class CdDetailComponent {
           }
         }
       });
-    } else {
-      this.toastr.error('No CV selected for deletion.');
-    }
+    } 
   }
   
   

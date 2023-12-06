@@ -17,7 +17,6 @@ export class ItemComponent  {
   onClick(cv: Cv){
     //this.itemClick.emit(cv)
     this.cvService.showCv(this.cv);
-
   }
 
 }

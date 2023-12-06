@@ -26,14 +26,12 @@ export class CvService {
   
   getCvsfromapi(): Observable<Cv[]> {
     return this.http.get<Cv[]>(this.apiUrl).pipe(
-      map(data => data.map(item => new Cv(item.id, item.name, item.firstname, item.age, item.CIN, item.job, item.path))),
+      map(data => data.map(item => new Cv(item.id, item.name, item.firstname, item.age, item.cin, item.job, item.path))),
       tap((cvArray: Cv[]) => this.cvs = cvArray),
       catchError(this.handleError.bind(this))
     );
   }  
 
-  
-  
   private handleError(error: HttpErrorResponse): Observable<Cv[]> {
     this.toastr.error('There was a problem fetching CVs from the API.');
     return of(this.cvs);

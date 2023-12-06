@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cv } from "../ex4/cv";
 import { ToastrService } from "ngx-toastr";
-// autres importations...
 
 @Injectable({
   providedIn: 'root'
