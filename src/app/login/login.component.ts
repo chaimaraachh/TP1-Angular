@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 login(loginForm: { value: any; }) {
-
   alert(loginForm.value);
 }
 }

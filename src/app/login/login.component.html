@@ -10,6 +10,7 @@
         class="form-control"
         id="email"
         #email="ngModel">
+        
         <div class="alert alert-danger" *ngIf="!email.valid && email.touched">
             l'email n'est pas valide
         </div>
@@ -24,6 +25,10 @@
         class="form-control"
         id="password"
         #password="ngModel">
+
+
+
+
     <div class="alert alert-danger" *ngIf="!password.valid && password.touched">
         le password doit contenir au moins 4 caractères
     </div>
